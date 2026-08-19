@@ -19,14 +19,16 @@ export function HeroSection() {
       className="relative w-full overflow-hidden bg-black"
       style={{ height: "100dvh", minHeight: "100dvh" }}
     >
-      {/* ── VIDEO: fills entire viewport, no gaps ── */}
-      <motion.div className="absolute inset-0" style={{ scale }}>
+      {/* ── VIDEO: oversized iframe, cropped by overflow:hidden ── */}
+      <motion.div className="absolute inset-0 overflow-hidden" style={{ scale }}>
         <iframe
           src="https://www.youtube.com/embed/zO26cP_TzAo?autoplay=1&mute=1&loop=1&playlist=zO26cP_TzAo&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&disablekb=1&fs=0&iv_load_policy=3"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
+                     w-[178dvh] h-[100dvh]
+                     min-w-[178dvh] min-h-[100dvh]"
           allow="autoplay; encrypted-media"
           title="LugoGolf experiencia"
-          style={{ border: 0, objectFit: "cover" }}
+          style={{ border: 0 }}
         />
       </motion.div>
 
@@ -39,12 +41,11 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/20" />
       <div className="absolute inset-0 grain" />
 
-      {/* ── CONTENT: anchored to bottom, navbar-safe on mobile ── */}
+      {/* ── CONTENT ── */}
       <motion.div
         className="relative z-10 h-full flex flex-col justify-end px-5 lg:px-8 max-w-7xl mx-auto"
         style={{ y: textY, paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       >
-        {/* Spacer that pushes content below navbar on mobile */}
         <div className="flex-1 min-h-[140px] lg:min-h-0" />
 
         <div className="pb-20 lg:pb-10 max-w-4xl">
@@ -93,7 +94,7 @@ export function HeroSection() {
             Viajes, golf, amigos y diversión
           </motion.p>
 
-          {/* Description — hidden on small mobile, visible on lg+ */}
+          {/* Description — hidden on mobile */}
           <motion.p
             className="hidden sm:block text-white/45 body-lg max-w-xl mb-10"
             initial={{ opacity: 0, y: 20 }}
@@ -129,7 +130,7 @@ export function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Scroll indicator — hidden on mobile */}
+      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 hidden lg:flex"
         initial={{ opacity: 0 }}
