@@ -15,11 +15,11 @@ export function HeroSection() {
 
   return (
     <section ref={ref} className="relative h-dvh min-h-[700px] overflow-hidden bg-black">
-      {/* YouTube Video Background */}
-      <motion.div className="absolute inset-0" style={{ scale }}>
+      {/* YouTube Video Background — oversized to fill 9:16 mobile */}
+      <motion.div className="absolute inset-0 overflow-hidden" style={{ scale }}>
         <iframe
           src="https://www.youtube.com/embed/zO26cP_TzAo?autoplay=1&mute=1&loop=1&playlist=zO26cP_TzAo&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&disablekb=1&fs=0&iv_load_policy=3"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
+          className="absolute top-1/2 left-1/2 w-[200%] h-[200%] md:w-[130%] md:h-[130%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           allow="autoplay; encrypted-media"
           title="LugoGolf experiencia"
           style={{ border: 0 }}
@@ -34,9 +34,9 @@ export function HeroSection() {
       {/* Film grain */}
       <div className="absolute inset-0 grain" />
 
-      {/* Content — extra top padding on mobile to clear navbar */}
+      {/* Content — safe area on mobile below navbar */}
       <motion.div
-        className="relative z-10 h-full flex flex-col justify-end pb-20 lg:pb-28 px-5 lg:px-8 max-w-7xl mx-auto pt-28"
+        className="relative z-10 h-full flex flex-col justify-end pb-24 lg:pb-28 px-5 lg:px-8 max-w-7xl mx-auto pt-24 lg:pt-0"
         style={{ y: textY }}
       >
         <div className="max-w-4xl">
