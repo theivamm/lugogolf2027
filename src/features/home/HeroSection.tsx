@@ -23,12 +23,20 @@ export function HeroSection() {
       <motion.div className="absolute inset-0 overflow-hidden" style={{ scale }}>
         <iframe
           src="https://www.youtube.com/embed/zO26cP_TzAo?autoplay=1&mute=1&loop=1&playlist=zO26cP_TzAo&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&disablekb=1&fs=0&iv_load_policy=3"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
-                     w-[178dvh] h-[100dvh]
-                     min-w-[178dvh] min-h-[100dvh]"
           allow="autoplay; encrypted-media"
           title="LugoGolf experiencia"
-          style={{ border: 0 }}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "250vw",
+            height: "250vh",
+            minWidth: "250vw",
+            minHeight: "250vh",
+            transform: "translate(-50%, -50%)",
+            border: 0,
+            pointerEvents: "none",
+          }}
         />
       </motion.div>
 
